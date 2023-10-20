@@ -27,5 +27,4 @@ public class CursoResource {
         Curso newCurso = cursoRepository.save(curso);
         return ResponseEntity.ok().body(newCurso);
     }
-
 }

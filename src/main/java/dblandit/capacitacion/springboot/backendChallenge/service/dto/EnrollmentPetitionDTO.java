@@ -10,7 +10,7 @@ public class EnrollmentPetitionDTO implements Serializable {
     private Integer cursoId;
 
     @NotNull
-    private Integer alumnoId;
+    private Integer personaId;
 
     public Integer getCursoId() {
         return cursoId;
@@ -20,11 +20,11 @@ public class EnrollmentPetitionDTO implements Serializable {
         this.cursoId = cursoId;
     }
 
-    public Integer getAlumnoId() {
-        return alumnoId;
+    public Integer getPersonaId() {
+        return personaId;
     }
 
-    public void setAlumnoId(Integer alumnoId) {
-        this.alumnoId = alumnoId;
+    public void setPersonaId(Integer personaId) {
+        this.personaId = personaId;
     }
 }

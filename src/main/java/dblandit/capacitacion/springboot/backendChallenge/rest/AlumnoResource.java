@@ -36,7 +36,7 @@ public class AlumnoResource {
     @CrossOrigin
     @PostMapping("/alumnos")
     public ResponseEntity<Alumno> createAlumno(@RequestBody Alumno alumno) {
-        log.debug("REST request to create an 'Alumno': {}", alumno);
+        log.debug("REST request to create an 'Alumno' entity: {}", alumno);
         return ResponseEntity.ok().body(alumnoRepository.save(alumno));
     }
 

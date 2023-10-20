@@ -3,7 +3,9 @@ package dblandit.capacitacion.springboot.backendChallenge.domain;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "curso")
@@ -24,7 +26,11 @@ public class Curso implements Serializable {
     private Integer duracion;
 
     @ManyToMany(mappedBy = "cursos")
-    private List<Alumno> alumnos;
+    private Set<Alumno> alumnos = new HashSet<Alumno>();
+
+    @ManyToMany(mappedBy = "cursos")
+    private Set<Profesor> profesores = new HashSet<Profesor>();
+
     public Integer getId() {
         return id;
     }
@@ -57,11 +63,19 @@ public class Curso implements Serializable {
         this.duracion = duracion;
     }
 
-    public List<Alumno> getAlumnos() {
+    public Set<Alumno> getAlumnos() {
         return alumnos;
     }
 
-    public void setAlumnos(List<Alumno> alumnos) {
+    public void setAlumnos(Set<Alumno> alumnos) {
         this.alumnos = alumnos;
+    }
+
+    public Set<Profesor> getProfesores() {
+        return profesores;
+    }
+
+    public void setProfesores(Set<Profesor> profesores) {
+        this.profesores = profesores;
     }
 }
